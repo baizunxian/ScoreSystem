@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>本学院申请</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+    <div class="layui-fluid" style="margin-top: 40px;">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend style="font-size: 26px">本学院申请</legend>
+        </fieldset>
+        <table id="teacher_college_application_list" lay-filter="teacher_college_application_list"></table>
+    </div>
+<script src="/static/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element','table','util'], function () {
+        var element = layui.element,
+            $ = layui.jquery,
+            table = layui.table,
+            util = layui.util;
+
+        var dt = table.render({
+            elem:"#teacher_college_application_list",
+            url:"/teacher_college_application_list/",
+            page:true,
+            id: 'teacher_college_application_list',
+            cols:[[
+                {field: 'id', title: 'id', align: 'center'}
+                ,{field: 'Suser', title: '申请人', align: 'center'}
+                ,{field: 'school_year', title: '学年', align: 'center'}
+                ,{field: 'college', title: '学院', align: 'center'}
+                ,{field: 'major', title: '专业', align: 'center'}
+                ,{field: 'year_shift', title: '年班', align: 'center'}
+                ,{field: 'credit_and_GPA', title: '学分和绩点', align: 'center'}
+                ,{field: 'dormitory_standard', title: '宿舍不达标次数', align: 'center', width: 170}
+                ,{field: 'volunteer_hours', title: '志愿者小时数', align: 'center', width: 170}
+                ,{field: 'comprehensive_results', title: '综合成绩', align: 'center', width: 170}
+                ,{field: 'activity_quantification', title: '活动量化', align: 'center', width: 170},
+                {fixed: 'right', title: '操作', align: 'center', toolbar:'#tools',width:180}
+            ]]
+        });
+
+        table.on('tool(teacher_college_application_list)',function(obj){
+            var data = obj.data;
+            var layEvent = obj.event;
+            var tr = obj.tr;
+            var currPage = dt.config.page.curr;
+
+            if(layEvent ==="approval"){
+            	window.location.href="/approval_application/?Aid="+data.id;
+            }
+
+            if(layEvent === 'delete'){
+                layer.confirm('确认删除当前数据吗？',{icon:5,shade:0.1},function(index){
+                    $.post("/bonus_delete/",{id:data.id, csrfmiddlewaretoken: '{{ csrf_token  }}'},function(success){
+                    	if(success.code === 0){
+                    		obj.del();
+                    		dt.reload({
+                    			page:{curr:1}
+                    		});
+                    		layer.msg("删除成功");
+                    	}
+                    })
+                });
+            }
+
+        });
+    });
+
+</script>
+<script type="text/html" id="tools">
+    <a class="layui-btn layui-btn-xs " lay-event="approval">审批</a>
+{#    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="delete">删除</a>#}
+</script>
+</body>
+</html>

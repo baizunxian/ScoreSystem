@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改奖项</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+<div class="wrapper" style="width: 900px;margin-top: 40px">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend style="font-size: 26px">修改奖项</legend>
+    </fieldset>
+    <form id="toEditbonusPage" class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">奖项名称</label>
+            <div class="layui-input-block">
+                <input  type="number" name="bonus_id" value="{{ bonus_info.id }}" hidden>
+                <input  type="text" name="bonus_name" placeholder="请输入奖项名称" required lay-verify="required" class="layui-input"
+                value="{{ bonus_info.bonus_name }}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">时间范围</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" id="startup_time" name="startup_time" placeholder="请选择时间范围">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学分绩点</label>
+            <div class="layui-input-block">
+                <input type="number" name="credit_and_GPA" required lay-verify="required" placeholder="请输入学分和绩点"
+                       autocomplete="off" class="layui-input" value="{{ bonus_info.credit_and_GPA }}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">宿舍不达标次数</label>
+            <div class="layui-input-block">
+                <input type="number" name="dormitory_standard" required lay-verify="required" placeholder="请输入宿舍不达标次数"
+                       autocomplete="off" class="layui-input" value="{{ bonus_info.dormitory_standard }}" >
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">志愿者小时数</label>
+            <div class="layui-input-block">
+                <input type="number" name="volunteer_hours" required lay-verify="required" placeholder="请输入志愿者小时数"
+                       autocomplete="off" class="layui-input" value="{{ bonus_info.volunteer_hours }}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学分</label>
+            <div class="layui-input-block">
+                <input type="text" name="credit" required lay-verify="required" placeholder="请输入学分"
+                       autocomplete="off" class="layui-input" value="{{ bonus_info.credit }}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">奖金类型</label>
+                <div class="layui-input-block">
+                  <select name="bonus_type" lay-verify="required">
+                    <option value=""></option>
+                      {% if bonus_info.bonus_type == '奖学金' %}
+                          <option value="奖学金" selected>奖学金</option>
+                          <option value="助学金">助学金</option>
+                      {% elif bonus_info.bonus_type == '助学金'  %}
+                          <option value="奖学金">奖学金</option>
+                          <option value="助学金" selected>助学金</option>
+                      {% endif %}
+                  </select>
+                </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="toEditbonusPage" id="">修改</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+     layui.use(['element','form','layer','upload', 'laydate'],function () {
+         var element = layui.element,
+            form = layui.form,
+            layer = layui.layer,
+            laydate = layui.laydate,
+            $ = layui.jquery;
+         laydate.render({
+            elem: '#startup_time'
+            ,type: 'datetime'
+            ,range: '~',
+             value: '{{ bonus_info.start_time|date:'Y-m-d H:i:s' }} ~ {{ bonus_info.end_time|date:'Y-m-d H:i:s' }}'
+          });
+
+         form.on("submit(toEditbonusPage)",function(data){
+        	$.post("/toEditbonusPage/",$("#toEditbonusPage").serialize()+'&'+$.param({
+                csrfmiddlewaretoken:'{{ csrf_token  }}',
+                Teacher_id:{{request.session.Teacher_id}},
+         }),function(res){
+        		if(res.code === 0){
+        			 layer.msg("修改奖项成功！",{icon:1,time:800,end:function(){window.location="/allproject/";}});
+                     $("#toEditbonusPage")[0].reset();
+        		}
+        		else {
+        		    layer.msg(res.msg)
+                }
+        	});
+        	return false;
+     });
+  });
+</script>
+</body>
+</html>

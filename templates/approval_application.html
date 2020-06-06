@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>审批</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<style>
+    .text_left {
+    float: left;
+    display: block;
+    padding: 9px 0;
+    width: 80px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+    .text_all {
+    float: left;
+    display: block;
+    padding: 9px 0;
+    width: 80px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+</style>
+<body>
+<div class="wrapper" style="width: 900px;margin-top: 40px">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend style="font-size: 26px">审批申请表</legend>
+    </fieldset>
+    <form id="approval_application_form" class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">学号:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{application_info.Suser.Student_id}}</label>
+                <input type="hidden" name="Tid" value={{ request.session.Teacher_id }}>
+                <input type="hidden" name="Aid" value={{ application_info.id }}>
+            </div>
+            <label class="layui-form-label">学生姓名:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{application_info.Suser.SName}}</label>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{application_info.Suser.SSex}}</label>
+            </div>
+            <label class="layui-form-label">学年:</label>
+              <div class="layui-input-inline">
+                <label class="text_left">{{application_info.school_year}}</label>
+            </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学院:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{application_info.college.college_name}}</label>
+            </div>
+            <label class="layui-form-label">专业:</label>
+              <div class="layui-input-inline">
+                <label class="text_all">{{application_info.major.major_name}}</label>
+              </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">年班:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{application_info.year_shift}}</label>
+              </div>
+            <label class="layui-form-label">学分绩点:</label>
+              <div class="layui-input-inline">
+                <label class="text_left">{{application_info.credit_and_GPA}}</label>
+              </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">宿舍不达标次数:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{application_info.dormitory_standard}}</label>
+            </div>
+            <label class="layui-form-label">志愿小时数:</label>
+              <div class="layui-input-inline">
+                <label class="text_left">{{application_info.volunteer_hours}}</label>
+              </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">综合成绩:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{application_info.comprehensive_results}}</label>
+            </div>
+            <label class="layui-form-label">活动量化:</label>
+              <div class="layui-input-inline">
+                <label class="text_left">{{application_info.activity_quantification}}</label>
+              </div>
+        </div>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+            <legend>奖项图片</legend>
+        </fieldset>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">国家奖证书:</label>
+            <div class="layui-input-inline">
+                {% if application_info.country_image %}
+                    <div id="show_country_image" >
+                        <img src="/static/{{ application_info.country_image }}"
+                             alt="" width="72" height="50">
+                    </div>
+                {% else %}
+                    <label class="text_left">无</label>
+                {% endif %}
+              </div>
+            <label class="layui-form-label">赋值:</label>
+              <div class="layui-input-inline">
+                <div class="layui-input-inline">
+                    {% if application_info.country_image %}
+                        <input type="number" class="layui-input" placeholder="输入赋值分"
+                        name="country_fraction">
+                    {% else %}
+                        <input type="number" class="layui-input" placeholder="输入赋值分"
+                        name="country_fraction" disabled>
+                    {% endif %}
+            </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">省获奖证书:</label>
+            <div class="layui-input-inline">
+                {% if application_info.province_image %}
+                    <div id="show_province_image" >
+                        <img src="/static/{{ application_info.province_image }}"
+                             alt="" width="72" height="50">
+                    </div>
+                {% else %}
+                    <label class="text_left">无</label>
+                {% endif %}
+            </div>
+            <label class="layui-form-label">赋值:</label>
+            <div class="layui-input-inline">
+                {% if application_info.province_image %}
+                    <input type="number" class="layui-input" placeholder="输入赋值分"
+                    name="province_fraction">
+                {% else %}
+                    <input type="number" class="layui-input" placeholder="输入赋值分"
+                    name="province_fraction" disabled>
+                {% endif %}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">校奖证书:</label>
+            <div class="layui-input-inline">
+                {% if application_info.school_image %}
+                    <div id="show_school_image" >
+                        <img src="/static/{{ application_info.school_image }}"
+                             alt="" width="72" height="50">
+                    </div>
+                {% else %}
+                    <label class="text_left">无</label>
+                {% endif %}
+            </div>
+        <label class="layui-form-label">赋值:</label>
+              <div class="layui-input-inline">
+                {% if application_info.school_image %}
+                    <input type="number" class="layui-input" placeholder="输入赋值分"
+                    name="school_fraction">
+                {% else %}
+                    <input type="number" class="layui-input" placeholder="输入赋值分"
+                    name="school_fraction" disabled>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">科研项目:</label>
+            <div class="layui-input-block">
+                <label class="text_left">{{ application_info.research_project }}</label>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">申请理由:</label>
+            <div class="layui-input-block">
+                <label class="text_left">{{ application_info.remarks }}</label>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">审批备注:</label>
+            <div class="layui-input-block">
+                <textarea type="text/plain" name="approval_remarks" required lay-verify="required" placeholder="请输入审批备注"
+                          class="layui-textarea"></textarea>
+            </div>
+        </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">审批结果:</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="application_state" value="1" title="同意" checked>
+                  <input type="radio" name="application_state" value="2" title="不同意">
+                </div>
+          </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="approval_application" id="">提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+     layui.use(['element','form','layer','upload','laydate'],function () {
+         var element = layui.element,
+            form = layui.form,
+            layer = layui.layer,
+            laydate = layui.laydate,
+            $ = layui.jquery;
+
+         laydate.render({
+            elem: '#school_year'
+            ,type: 'year'
+            ,range: true
+          });
+
+         // 点击显示国奖图片
+         $("#show_country_image").click(function (t) {
+          var t = $(t).find("img");
+           //页面层
+           layer.open({
+               type: 1,
+               title: '国家奖',
+               skin: 'none', //加上边框
+               area: ['65%', '75%'], //宽高
+               shadeClose: true, //开启遮罩关闭
+               end: function (index, layero) {
+                   return false;
+               },
+               content: '<div style="text-align:center"><img src="/static/{{ application_info.country_image }}" /></div>'
+           });
+        });
+
+         // 点击显示省奖图片
+         $("#show_province_image").click(function (t) {
+          var t = $(t).find("img");
+           //页面层
+           layer.open({
+               type: 1,
+               title: '省奖',
+               skin: 'none', //加上边框
+               area: ['65%', '75%'], //宽高
+               shadeClose: true, //开启遮罩关闭
+               end: function (index, layero) {
+                   return false;
+               },
+               content: '<div style="text-align:center"><img src="/static/{{ application_info.province_image }}" /></div>'
+           });
+        });
+
+         // 点击显示学奖图片
+         $("#show_school_image").click(function (t) {
+          var t = $(t).find("img");
+           //页面层
+           layer.open({
+               type: 1,
+               title: '学校奖',
+               skin: 'none', //加上边框
+               area: ['65%', '75%'], //宽高
+               shadeClose: true, //开启遮罩关闭
+               end: function (index, layero) {
+                   return false;
+               },
+               content: '<div style="text-align:center"><img src="/static/{{ application_info.school_image }}" /></div>'
+           });
+        });
+
+         form.on("submit(approval_application)",function(data){
+        	$.post("/approval_application/",$("#approval_application_form").serialize()+'&'+$.param({
+                csrfmiddlewaretoken:'{{ csrf_token  }}',
+                Ttudent_id:{{request.session.Teacher_id}}
+         }),function(res){
+        		if(res.code===0){
+        			 layer.msg("审批成功！",{icon:1,end:function(){window.location="/teacher_college_application_page/";}});
+                     $("#add_application_form")[0].reset();
+        		}
+        	});
+        	return false;
+     });
+  });
+</script>
+</body>
+</html>

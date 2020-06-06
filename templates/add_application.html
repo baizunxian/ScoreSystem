@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>填写申请表</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<style>
+    .text_left {
+    float: left;
+    display: block;
+    padding: 9px 0;
+    width: 80px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+</style>
+<body>
+<div class="wrapper" style="width: 900px;margin-top: 40px">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend style="font-size: 26px">填写申请表</legend>
+    </fieldset>
+    <form id="add_application_form" class="layui-form" enctype="multipart/form-data" action="/add_application/" method="post">
+        {% csrf_token %}
+        <div class="layui-form-item">
+            <label class="layui-form-label">学号:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{student_info.Student_id}}</label>
+                <input type="hidden" name="Sid" value={{ request.session.Student_id }}>
+                <input type="hidden" name="Bid" value={{ bonus_info.id }}>
+            </div>
+            <label class="layui-form-label">姓名:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{student_info.SName}}</label>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别:</label>
+            <div class="layui-input-inline">
+                <label class="text_left">{{student_info.SSex}}</label>
+            </div>
+            <label class="layui-form-label">学年:</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="school_year" placeholder="学年"
+                name="school_year">
+              </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学院:</label>
+            <div class="layui-input-inline">
+                <select name="college" lay-verify="required" id="college" lay-filter="college">
+                    <option ></option>
+                    {% for college in all_college %}
+                        <option value="{{college.id}}">{{ college.college_name }}</option>
+                    {% endfor %}
+                  </select>
+            </div>
+            <label class="layui-form-label">专业:</label>
+              <div class="layui-input-inline">
+                <select name="major" lay-verify="required" id="major" lay-filter="major">
+                  </select>
+              </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">年班:</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" placeholder="输入年班"
+                name="year_shift">
+            </div>
+            <label class="layui-form-label">学分绩点:</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" placeholder="输入学分绩点"
+                name="credit_and_GPA">
+              </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">宿舍不达标次数:</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" placeholder="输入宿舍不达标次数"
+                name="dormitory_standard">
+            </div>
+            <label class="layui-form-label">志愿小时数:</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" placeholder="输入志愿小时数"
+                name="volunteer_hours">
+              </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">综合成绩:</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" placeholder="输入综合成绩"
+                name="comprehensive_results">
+            </div>
+            <label class="layui-form-label">活动量化:</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" placeholder="输入活动量化"
+                name="activity_quantification">
+              </div>
+        </div>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+            <legend>上传奖项图片</legend>
+        </fieldset>
+        <div class="layui-form-item">
+            <label class="layui-form-label">国家奖证书:</label>
+            <div class="layui-input-inline">
+                <input type="file" class="layui-input" placeholder="选择图片"
+                name="country_image" value="" id="province_image">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">省获奖证书:</label>
+            <div class="layui-input-inline">
+                <input type="file" class="layui-input" placeholder="选择图片"
+                name="province_image" value="" id="province_image">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">校奖证书:</label>
+            <div class="layui-input-inline">
+                <input type="file" class="layui-input" placeholder="选择图片"
+                name="school_image" value="" id="school_image">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">科研项目:</label>
+            <div class="layui-input-block">
+                <textarea type="text/plain" name="research_project" required lay-verify="required" placeholder="请输入科研项目内容"
+                          class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">申请理由:</label>
+            <div class="layui-input-block">
+                <textarea type="text/plain" name="remarks" required lay-verify="required" placeholder="请输入申请理由"
+                          class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="submit" class="layui-btn">
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+     layui.use(['element','form','layer','upload','laydate'],function () {
+         var element = layui.element,
+            form = layui.form,
+            layer = layui.layer,
+            laydate = layui.laydate,
+            $ = layui.jquery;
+
+         laydate.render({
+            elem: '#school_year'
+            ,type: 'year'
+            ,range: true
+          });
+
+        form.on('select(college)', function(data){
+            var Cid=data.elem.value;
+            $.ajax({
+                type: 'POST',
+                url: "/get_major/",
+                data: {
+                    Cid:Cid,
+                    csrfmiddlewaretoken:'{{ csrf_token  }}'
+                },
+                dataType: 'json',
+                success:function(data){
+                    //empty() 方法从被选元素移除所有内容
+                    $("select[name='major']").empty();
+                    var html = "<option value=''></option>";
+                    for (let i=0; i<data.length;i++){
+                        html += "<option value='" + data[i]['id'] + "'>" + data[i]['major_name'] + "</option>";
+                    }
+                    //把遍历的数据放到select表里面
+                    $("select[name='major']").append(html);
+                    //从新刷新了一下下拉框
+                    form.render('select');      //重新渲染
+                }
+            });
+        });
+
+         form.on("submit(add_application)",function(data){
+            let formData = new FormData();
+            let school_image = $("#school_image");
+            formData.append('school_image', school_image[0]);
+
+             console.log(formData)
+        	$.post("/add_application/",$("#add_application_form").serialize()+'&'+$.param({
+                csrfmiddlewaretoken:'{{ csrf_token  }}',
+                Student_id:{{request.session.Student_id}}
+         }),function(res){
+        		if(res=="OK"){
+        			 layer.msg("申请成功！",{icon:1,time:1500,end:function(){window.location="/add_application/";}});
+                     $("#add_application_form")[0].reset();
+        		}
+        	});
+        	return false;
+     });
+  });
+</script>
+</body>
+</html>

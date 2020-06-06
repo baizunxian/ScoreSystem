@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eea277ed-a02d-478f-a82b-c3e6d5351d1e" name="Default Changelist" comment="">
+      <change beforePath="D:/PythonProject/test_tools_kye/.idea/workspace.xml" beforeDir="false" afterPath="D:/PythonProject/test_tools_kye/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="D:/PythonProject/test_tools_kye/logs/all.log" beforeDir="false" afterPath="D:/PythonProject/test_tools_kye/logs/all.log" afterDir="false" />
+      <change beforePath="D:/kye_tools/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="D:/kye_tools/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="D:/kye_tools/.idea/kye_tools.iml" beforeDir="false" />
+      <change beforePath="D:/kye_tools/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="D:/kye_tools/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="D:/kye_tools/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="D:/kye_tools/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/score/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2641">
+              <caret line="139" column="16" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/score/modelsJson.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/score/admin_view.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6441">
+              <caret line="339" column="5" selection-start-line="339" selection-start-column="5" selection-end-line="339" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScoreSystem/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="628">
+              <caret line="62" column="52" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
+              <folding>
+                <element signature="e#635#667#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/all_bonus.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/add_Bonus.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1596">
+              <caret line="84" column="23" selection-start-line="75" selection-end-line="102" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/bg.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/score/tests.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ScoreSystem/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+              <folding>
+                <element signature="e#310#319#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>all_app</find>
+      <find>province_fraction</find>
+      <find>session.</find>
+      <find>session.T</find>
+      <find>session.Student_num</find>
+      <find>login</find>
+      <find>测试</find>
+      <find>update_student</find>
+      <find>all_application_list</find>
+      <find>Suser</find>
+      <find>add_Scholarship</find>
+      <find>addScholarshipForm</find>
+      <find>TeacherPage</find>
+      <find>all_student_list</find>
+      <find>all_teacher_list</find>
+      <find>delete</find>
+      <find>all_s</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>TStaff_number</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="D:/" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../py脚本/test1.py" />
+        <option value="$PROJECT_DIR$/templates/add_application.html" />
+        <option value="$PROJECT_DIR$/templates/StudentPage.html" />
+        <option value="$PROJECT_DIR$/templates/update_student_pwd.html" />
+        <option value="$PROJECT_DIR$/templates/TeacherPage.html" />
+        <option value="$PROJECT_DIR$/templates/all_bonus.html" />
+        <option value="$PROJECT_DIR$/ScoreSystem/urls.py" />
+        <option value="$PROJECT_DIR$/templates/adminhome.html" />
+        <option value="$PROJECT_DIR$/templates/all_application.html" />
+        <option value="$PROJECT_DIR$/templates/add_student.html" />
+        <option value="$PROJECT_DIR$/templates/add_teacher.html" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/score/views.py" />
+        <option value="$PROJECT_DIR$/../py脚本/十库百表查询条数.py" />
+        <option value="$PROJECT_DIR$/score/student_view.py" />
+        <option value="$PROJECT_DIR$/templates/all_student_page.html" />
+        <option value="$PROJECT_DIR$/templates/all_teacher_page.html" />
+        <option value="$PROJECT_DIR$/utils/task.py" />
+        <option value="$PROJECT_DIR$/score/task.py" />
+        <option value="$PROJECT_DIR$/score/tasks.py" />
+        <option value="$PROJECT_DIR$/ScoreSystem/settings.py" />
+        <option value="$PROJECT_DIR$/score/serializers.py" />
+        <option value="$PROJECT_DIR$/score/admin_view.py" />
+        <option value="$PROJECT_DIR$/score/models.py" />
+        <option value="$PROJECT_DIR$/score/modelsJson.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1750" />
+    <option name="height" value="995" />
+  </component>
+  <component name="ProjectId" id="1a6l4XZCNsquNb3vtxsSufM1HcV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ScoreSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScoreSystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScoreSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScoreSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="score" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScoreSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScoreSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="ScoreSystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScoreSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScoreSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ScoreSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ScoreSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/score" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\objcet\ScoreSystem\score" />
+      <recent name="D:\objcet\ScoreSystem\templates" />
+      <recent name="D:\objcet\ScoreSystem\static" />
+      <recent name="C:\Users\Administrator\Desktop\object\ScoreSystem\score" />
+      <recent name="C:\Users\Administrator\Desktop\object\ScoreSystem\templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Django server.ScoreSystem">
+    <configuration name="十库百表查询条数" type="PythonConfigurationType" factoryName="Python">
+      <module name="ScoreSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../py脚本" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../py脚本/十库百表查询条数.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ScoreSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../py脚本" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../py脚本/test1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ScoreSystem" type="Python.DjangoServer" factoryName="Django server">
+      <module name="ScoreSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="ScoreSystem.settings" />
+      </envs>
+      <option name="SDK_HOME" value="D:\python3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8010" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eea277ed-a02d-478f-a82b-c3e6d5351d1e" name="Default Changelist" comment="" />
+      <created>1586063733802</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586063733802</updated>
+      <workItem from="1586063747573" duration="36859000" />
+      <workItem from="1586229131245" duration="3347000" />
+      <workItem from="1586234502006" duration="12577000" />
+      <workItem from="1586263751880" duration="12125000" />
+      <workItem from="1586406266857" duration="20189000" />
+      <workItem from="1586486212242" duration="12207000" />
+      <workItem from="1586569974611" duration="6391000" />
+      <workItem from="1586746063364" duration="592000" />
+      <workItem from="1586762860129" duration="1128000" />
+      <workItem from="1586828923947" duration="3228000" />
+      <workItem from="1586857609218" duration="10578000" />
+      <workItem from="1586941646043" duration="852000" />
+      <workItem from="1587003056044" duration="598000" />
+      <workItem from="1587003728144" duration="2578000" />
+      <workItem from="1587008373568" duration="8454000" />
+      <workItem from="1588768789711" duration="753000" />
+      <workItem from="1589856497439" duration="1193000" />
+      <workItem from="1589874343312" duration="575000" />
+      <workItem from="1591147989598" duration="5541000" />
+      <workItem from="1591153775279" duration="3698000" />
+      <workItem from="1591174600763" duration="3135000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="88073000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20844504" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.3547486" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39944133" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32960895" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.40502793" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49932975" weight="0.3896648" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32960895" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/score/admin_view.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/score/admin_view.py</url>
+          <line>320</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/score/admin_view.py</url>
+          <line>326</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ScoreSystem$.coverage" NAME="十库百表查询条数 Coverage Results" MODIFIED="1586585848000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../py脚本" />
+    <SUITE FILE_PATH="coverage/ScoreSystem$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1586421058788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../py脚本" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/all_bonus_student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/edit_student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="141" column="38" lean-forward="true" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../py脚本/test2.py" />
+    <entry file="file://$PROJECT_DIR$/../py脚本/test3.py" />
+    <entry file="file://$PROJECT_DIR$/../py脚本/test1.py" />
+    <entry file="file://$PROJECT_DIR$/templates/update_admin_pwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="57" column="16" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/update_student_pwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="71" column="39" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/TeacherPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminhome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="47" column="50" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/StudentPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="34" column="71" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="71" />
+          <folding>
+            <element signature="n#style#0;n#dd#1;n#dl#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_teacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="121" column="63" selection-start-line="121" selection-start-column="63" selection-end-line="121" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="136" column="97" selection-start-line="136" selection-start-column="66" selection-end-line="136" selection-end-column="97" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#legend#0;n#fieldset#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myorder.html" />
+    <entry file="file://$PROJECT_DIR$/templates/mypelease.html" />
+    <entry file="file://$PROJECT_DIR$/templates/my_application.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="30" column="69" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/allJobsPage.html" />
+    <entry file="file://$PROJECT_DIR$/score/teacher_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/django/utils/deprecation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/django/core/handlers/exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-83">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/contextlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="869" lean-forward="true" selection-start-line="869" selection-end-line="869" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../py脚本/十库百表查询条数.py" />
+    <entry file="file://$PROJECT_DIR$/templates/all_teacher_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="30" column="34" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/all_student_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="18" column="10" selection-start-line="12" selection-start-column="4" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score/student_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="160" column="19" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/django/utils/functional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/django/db/models/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/django/db/models/options.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="369" selection-start-line="369" selection-end-line="369" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/django/db/models/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="301" selection-start-line="301" selection-end-line="301" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score/tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/all_application.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1482">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4028">
+          <caret line="212" column="4" selection-start-line="212" selection-start-column="4" selection-end-line="212" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_application.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2698">
+          <caret line="142" column="55" selection-start-line="142" selection-start-column="55" selection-end-line="142" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/rest_framework/fields.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="354" column="8" selection-start-line="354" selection-start-column="8" selection-end-line="354" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/rest_framework/relations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="498" column="31" lean-forward="true" selection-start-line="498" selection-start-column="31" selection-end-line="498" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python3/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2641">
+          <caret line="139" column="16" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score/modelsJson.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score/admin_view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6441">
+          <caret line="339" column="5" selection-start-line="339" selection-start-column="5" selection-end-line="339" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/add_Bonus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1596">
+          <caret line="84" column="23" selection-start-line="75" selection-end-line="102" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScoreSystem/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <folding>
+            <element signature="e#310#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScoreSystem/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="62" column="52" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/all_bonus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

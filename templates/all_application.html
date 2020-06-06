@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>所有申请</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+    <div class="layui-fluid" style="margin-top: 40px;">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend style="font-size: 26px">所有申请</legend>
+        </fieldset>
+         <div class="layui-form-item" >
+
+         <label class="layui-form-label">项目名称：</label>
+         <div class="layui-input-inline">
+            <input class="layui-input" name="bonus_name" id="bonus_name" autocomplete="off">
+          </div>
+
+         <label class="layui-form-label">学生：</label>
+         <div class="layui-input-inline">
+            <input class="layui-input" name="SName" id="SName" autocomplete="off">
+          </div>
+
+         <label class="layui-form-label">学院:</label>
+        <div class="layui-input-inline">
+                <select name="college" lay-verify="required" id="college" lay-filter="college" class="layui-input">
+                    <option ></option>
+                    {% for college in all_college %}
+                        <option value="{{college.id}}">{{ college.college_name }}</option>
+                    {% endfor %}
+                  </select>
+         </div>
+
+         <label class="layui-form-label">专业:</label>
+          <div class="layui-input-inline">
+            <select name="major" lay-verify="required" id="major" lay-filter="major" class="layui-input">
+            </select>
+          </div>
+
+          <button class="layui-btn" data-type="reload" id="search">搜索</button>
+        </div>
+
+        <table id="all_application_list" lay-filter="all_application_list"></table>
+    </div>
+<script src="/static/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element','table','util'], function () {
+        var element = layui.element,
+            $ = layui.jquery,
+            table = layui.table,
+            util = layui.util;
+
+        var dt = table.render({
+            elem:"#all_application_list",
+            url:"/all_application_list/",
+            page:true,
+            id: 'all_application_list',
+            cols:[[
+                {field: 'id', title: 'id', align: 'center'}
+                ,{field: 'Suser', title: '申请人', align: 'center', width: 100}
+                ,{field: 'bonus', title: '奖项名称', align: 'center', width: 100}
+                ,{field: 'application_state', title: '申请状态', align: 'center', templet:application_state, width: 100}
+                ,{field: 'Tuser', title: '审批老师', align: 'center', width: 120}
+                ,{field: 'school_year', title: '学年', align: 'center', width: 120}
+                ,{field: 'college', title: '学院', align: 'center', width: 120}
+                ,{field: 'major', title: '专业', align: 'center', width: 120}
+                ,{field: 'comprehensive_results', title: '综合成绩', align: 'center', sort: true, width: 120}
+                ,{field: 'activity_quantification', title: '活动量化', align: 'center', sort: true, width: 120}
+                ,{field: 'total_fraction', title: '总赋值分', align: 'center', sort: true, width: 120}
+                ,{field: 'total_score', title: '总成绩', align: 'center', sort: true, width: 100}
+                ,{field: 'year_shift', title: '年班', align: 'center', width: 120}
+                ,{field: 'credit_and_GPA', title: '学分和绩点', align: 'center', width: 120}
+                ,{field: 'dormitory_standard', title: '宿舍不达标次数', align: 'center', width: 170}
+                ,{field: 'volunteer_hours', title: '志愿者小时数', align: 'center', width: 170}
+                ,{fixed: 'right', title: '操作', align: 'center', toolbar:'#tools',width:180}
+            ]]
+        });
+
+        // 状态模板
+        function application_state(data) {
+            var application_state = data.application_state;
+            if (application_state === 0) {
+                return "<span style='color: #1E9FFF;'>未审核</span>";
+            }
+            if (application_state === 1) {
+                return "<span style='color: #009688;'>审核通过</span>";
+            }
+            if (application_state === 2) {
+                return "<span style='color: #FF5722;'>审核未通过</span>";
+            }
+        }
+
+        table.on('tool(all_application_list)',function(obj){
+            var data = obj.data;
+            var layEvent = obj.event;
+            var tr = obj.tr;
+            var currPage = dt.config.page.curr;
+
+            if(layEvent ==="view"){
+            	window.location.href="/details_application/?Aid="+data.id;
+            }
+
+            if(layEvent === 'delete'){
+                layer.confirm('确认删除当前数据吗？',{icon:5,shade:0.1},function(index){
+                    $.post("/application_delete/",{Aid:data.id, csrfmiddlewaretoken: '{{ csrf_token  }}'},function(success){
+                    	if(success.code === 0){
+                    		obj.del();
+                    		dt.reload({
+                    			page:{curr:1}
+                    		});
+                    		layer.msg("删除成功");
+                    	}
+                    })
+                });
+            }
+
+        });
+        $('#search').on('click', function () {
+                let bonus_name = $('#bonus_name');
+                let SName = $('#SName');
+                let college = $('#college');
+                let major = $('#major');
+
+                //执行重载
+                table.reload('all_application_list', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    , where: {
+                            bonus_name: bonus_name.val(),
+                            SName: SName.val(),
+                            college: college.val(),
+                            major: major.val()
+                    }
+                }, 'data');
+        });
+
+
+        $('#college').on('click', function(data){
+            var Cid= $('#college').val()
+            $.ajax({
+                type: 'POST',
+                url: "/get_major/",
+                data: {
+                    Cid:Cid,
+                    csrfmiddlewaretoken:'{{ csrf_token  }}'
+                },
+                dataType: 'json',
+                success:function(data){
+                    //empty() 方法从被选元素移除所有内容
+                    $("select[name='major']").empty();
+                    var html = "<option value=''></option>";
+                    for (let i=0; i<data.length;i++){
+                        html += "<option value='" + data[i]['id'] + "'>" + data[i]['major_name'] + "</option>";
+                    }
+                    //把遍历的数据放到select表里面
+                    $("select[name='major']").append(html);
+                    //从新刷新了一下下拉框
+                    element.render('select');      //重新渲染
+                }
+            });
+        });
+
+    });
+
+</script>
+<script type="text/html" id="tools">
+    <a class="layui-btn layui-btn-xs " lay-event="view">查看</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="delete">删除</a>
+</script>
+</body>
+</html>

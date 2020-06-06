@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我以审批</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+    <div class="layui-fluid" style="margin-top: 40px;">
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend style="font-size: 26px">我以审批</legend>
+        </fieldset>
+        <table id="my_application" lay-filter="my_application"></table>
+    </div>
+<script src="/static/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['element','table','util'], function () {
+        var element = layui.element,
+            $ = layui.jquery,
+            table = layui.table,
+            util = layui.util;
+
+        var dt = table.render({
+            elem:"#my_application",
+            url:"/teacher_Approved_page_list/",
+            page:true,
+            id: 'my_application',
+            cols:[[
+                {field: 'id', title: 'id', align: 'center'}
+                ,{field: 'Suser', title: '申请人', align: 'center'}
+                , {field: 'application_state', title: '审核状态', templet: application_state, align: 'center', width: 100}
+                ,{field: 'school_year', title: '学年', align: 'center'}
+                ,{field: 'college', title: '学院', align: 'center'}
+                ,{field: 'major', title: '专业', align: 'center'}
+                ,{field: 'year_shift', title: '年班', align: 'center'}
+                ,{field: 'credit_and_GPA', title: '学分和绩点', align: 'center'}
+                ,{field: 'dormitory_standard', title: '宿舍不达标次数', align: 'center'}
+                ,{field: 'volunteer_hours', title: '志愿者小时数', align: 'center'}
+                ,{field: 'comprehensive_results', title: '综合成绩', align: 'center'}
+                ,{field: 'activity_quantification', title: '活动量化', align: 'center', width: 170},
+                {fixed: 'right', title: '操作', align: 'center', toolbar:'#tools',width:180}
+            ]]
+        });
+        // 状态模板
+        function application_state(data) {
+            var application_state = data.application_state;
+            if (application_state === 0) {
+                return "<span style='color: #1E9FFF;'>未审核</span>";
+            }
+            if (application_state === 1) {
+                return "<span style='color: #009688;'>审核通过</span>";
+            }
+            if (application_state === 2) {
+                return "<span style='color: #FF5722;'>审核未通过</span>";
+            }
+        }
+
+        table.on('tool(my_application)',function(obj){
+            var data = obj.data;
+            var layEvent = obj.event;
+            var tr = obj.tr;
+            var currPage = dt.config.page.curr;
+
+            if(layEvent === "view"){
+                window.location.href="/details_application/?Aid="+data.id;
+            }
+        });
+    });
+
+</script>
+<script type="text/html" id="tools">
+    <a class="layui-btn layui-btn-xs " lay-event="view">查看</a>
+</script>
+</body>
+</html>

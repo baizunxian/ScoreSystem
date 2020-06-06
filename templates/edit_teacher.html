@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改老师信息</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+<div class="wapper" style="width: 500px;margin-top: 40px">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend style="font-size: 26px">修改老师信息</legend>
+    </fieldset>
+    <form class="layui-form" method="post">
+        {% csrf_token %}
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline">
+                <input type="hidden" value="{{ teacher_info.id }}" name="Tid"/>
+                <input type="text" name="TName" value="{{ teacher_info.TName }}" required lay-verify="required" autocomplete="off"
+                       class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux"></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密&emsp;码</label>
+            <div class="layui-input-inline">
+                <input type="text" name="TPwd" required lay-verify="required"
+                       autocomplete="off"
+                       class="layui-input" value="{{teacher_info.TPwd}}" lay-verify="pass">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">职工号</label>
+            <div class="layui-input-inline">
+                <input type="number" name="TStaff_number" lay-verify="required"
+                       autocomplete="off"
+                       class="layui-input"
+                       value="{{teacher_info.TStaff_number}}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学院:</label>
+            <div class="layui-input-inline">
+                <select name="college" lay-verify="required" id="college" lay-filter="college">
+                    <option ></option>
+                {% for college in all_college %}
+                    {% if teacher_info.TCollege_id == college.id %}
+                        <option value="{{college.id}}" selected>{{ college.college_name }}</option>
+                    {% else %}
+                        <option value="{{college.id}}">{{ college.college_name }}</option>
+                    {% endif %}
+                {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">电&emsp;话</label>
+            <div class="layui-input-inline">
+                <input type="number" name="TPhoneNumber" lay-verify="required"
+                       autocomplete="off"
+                       class="layui-input"
+                       value="{{teacher_info.TPhoneNumber}}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">身份证号码</label>
+            <div class="layui-input-inline">
+                <input type="number" name="TIDCard" lay-verify="required"
+                       autocomplete="off"
+                       class="layui-input" 
+                       value="{{ teacher_info.TIDCard }}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-inline">
+                <select name="TSex" lay-verify="required">
+                    <option value=""></option>
+                    {% if teacher_info.TSex == '男' %}
+                          <option value="男" selected>男</option>
+                          <option value="女">女</option>
+                      {% elif teacher_info.TSex == '女'  %}
+                          <option value="男">男</option>
+                          <option value="女" selected>女</option>
+                      {% endif %}
+                  </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="edit">修改</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use(['element', 'form','layer'], function () {
+        var element = layui.element,
+            form = layui.form,
+            $ = layui.jquery,
+            layer = layui.layer;
+
+        form.on('select(college)', function(data){
+            var Cid=data.elem.value;
+            $.ajax({
+                type: 'POST',
+                url: "/get_major/",
+                data: {
+                    Cid:Cid,
+                    csrfmiddlewaretoken:'{{ csrf_token  }}'
+                },
+                dataType: 'json',
+                success:function(data){
+                    //empty() 方法从被选元素移除所有内容
+                    $("select[name='major']").empty();
+                    var html = "<option value=''></option>";
+                    for (let i=0; i<data.length;i++){
+                        html += "<option value='" + data[i]['id'] + "'>" + data[i]['major_name'] + "</option>";
+                    }
+                    //把遍历的数据放到select表里面
+                    $("select[name='major']").append(html);
+                    //从新刷新了一下下拉框
+                    form.render('select');      //重新渲染
+                }
+            });
+        });
+        
+        form.on("submit(edit)",function(data){
+        	$.post("/edit_teacher_page/",data.field,function(result){
+        		if(result.code === 0){
+        			layer.msg(result.msg,{time:800,end:function(){window.history.back(-1);}})
+        		}else{
+        			layer.msg("修改失败,请重试");
+        		}
+        	});
+        	return false;
+        })
+    });
+</script>    
+</body>
+</html>

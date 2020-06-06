@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>高校学生评优评奖系统</title>
+
+    <script type="text/javascript">
+        let _path = "";
+        var _systemPath = "";
+        var _stylePath = "/zftal-ui-v5-1.0.2";
+    </script>
+    <!--jQuery核心框架库 -->
+    <script type="text/javascript" src="../static/login_files/jquery.min.js"></script>
+    <!--jQuery常用工具扩展库：基础工具,资源加载工具,元素尺寸相关工具 -->
+    <script type="text/javascript" src="../static/login_files/jquery.utils.contact-min.js" charset="utf-8"></script>
+    <!--jQuery浏览器检测 -->
+    <script type="text/javascript" src="../static/login_files/browse-judge.js"></script>
+    <script type="text/javascript">
+    </script>
+    <!--Bootstrap布局框架-->
+    <link rel="stylesheet" type="text/css" href="../static/login_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/login_files/zftal-ui.css">
+    <script type="text/javascript" src="../static/login_files/bootstrap.min.js" charset="utf-8"></script>
+    <!--jQuery.chosen美化插件-->
+    <link rel="stylesheet" type="text/css" href="../static/login_files/chosen-min.css">
+    <script type="text/javascript" src="../static/login_files/jquery.choosen.concat-min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../static/login_files/zh_CN-min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../static/login_files/jquery.utils.pinyin.min.js" charset="utf-8"></script>
+    <!--业务框架jQuery全局设置和通用函数库-->
+    <script type="text/javascript" src="../static/login_files/jquery.zftal.contact-min.js"></script>
+    <!--业务框架前端脚本国际化库-->
+    <script type="text/javascript" src="../static/login_files/jquery.zftal_zh_CN-min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/zftal-ui-v5-1.0.2/assets/js/html5shiv.min.js?ver=20170713" type="text/javascript"
+            charset="utf-8"></script>
+    <script src="/zftal-ui-v5-1.0.2/assets/js/respond.min.js?ver=20170713" type="text/javascript"
+            charset="utf-8"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/css/admin.css">
+
+    {#    <meta http-equiv="Content-Security-Policy" content="script-src &#39;self&#39; &#39;unsafe-inline&#39;">#}
+
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <style type="text/css">
+        .btn-lang {
+            width: 76px;
+            border-color: #357ebd;
+            font-weight: bold;
+            height: 30px;
+        }
+
+        .btn-lang-enabled {
+            background-color: #428bca;
+            color: #fff;
+        }
+
+        .btn-lang-disabled {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .btn-lang-enabled:hover, .btn-lang-enabled:focus {
+            color: #fff;
+        }
+
+        .btn-group > .btn-lang:last-child {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .slideShow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slideShow ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            width: 1000px;
+            position: relative;
+        }
+
+        .slideShow ul li {
+            margin: 0px;
+            padding: 0px;
+            float: left;
+        }
+
+        .slideShow .showNav {
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .slideShow .showNav span {
+            cursor: pointer;
+            display: block;
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #ff5a28;
+            margin-left: 2px;
+            color: #fff;
+        }
+
+        .slideShow .showNav .active {
+            background: #b63e1a;
+        }
+    </style>
+</head>
+<body style="background:#fafafa;">
+<input type="hidden" name="yzcskz" id="yzcskz" value="3">
+<input type="hidden" name="mmsfjm" id="mmsfjm" value="1">
+<input type="hidden" name="mmsrddcshkzfs" id="mmsrddcshkzfs" value="0">
+<input type="hidden" name="dlsbsdsj" id="dlsbsdsj" value="3">
+
+<div class="container container_1170">
+    <div class="row sl_log_top">
+        <div class="col-sm-8 logo_1"><img src="../static/login_files/logo_jw_d.png" style="margin-top:-3px">
+            <span id="xtmc">高校学生评优评奖系统</span>
+        </div>
+        <div class="col-sm-4 text-right hidden-xs">
+
+
+        </div>
+    </div>
+    <div class="row sl_log_bor4">
+
+        <div class="col-sm-8 hidden-xs sl_log_lf slideShow">
+            <!-- 0不轮换图片-->
+            <img class="img-responsive" src="../static/login_files/login_bg_pic.jpg">
+
+        </div>
+        <div class="col-sm-4 sl_log_rt" style="transform: translate(0, 50%)">
+            <form class="form-horizontal" enctype="application/x-www-form-urlencoded"
+{#                  action="{% url 'login' %}" method="post">#}
+                  action="/login/" method="post" id="loginForm">
+                {% csrf_token %}
+
+                <h5>用户登录</h5>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <img src="../static/login_files/log_ic01.png" width="16"
+                                 height="16">
+                        </div>
+                        <input type="text" class="form-control" name="number" id="yhm" placeholder="职工号或学号"
+                               autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <img src="../static/login_files/log_ic02.png" width="16"
+                                 height="16">
+                        </div>
+                        <input type="password" class="form-control"
+                               name="pwd" id="mm" placeholder="密码"
+                               autocomplete="new-password">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span>老师</span><input type="radio" name="user_type" checked value="Teacher">
+                        <span>学生</span><input type="radio" name="user_type" value="Student">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit"
+                           class="btn btn-primary btn-block"
+                           style="transform: translate(0, 20%)"
+                           id="dl"
+                           lay-submit lay-filter="login"
+                           value="登 录">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use(['element', 'carousel', 'layer','form'], function () {
+        var element = layui.element,
+            carousel = layui.carousel,
+            $ = layui.jquery,
+            layer = layui.layer,
+            form = layui.form;
+        form.on("submit(login)", function (data) {
+            $.post("/login/", $("#loginForm").serialize()+'&'+$.param({
+                csrfmiddlewaretoken:'{{ csrf_token  }}'}), function (result) {
+                console.log(result);
+                if (result.code === 0) {
+                    window.location.href = result.url;
+                } else {
+                    layer.msg(result.msg)
+                }
+            });
+            return false
+        });
+    })
+</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>所有学生</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+</head>
+<body>
+<div class="layui-fluid" style="margin-top: 40px;">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend style="font-size: 26px">所有学生</legend>
+    </fieldset>
+    <div class="layui-form-item" >
+    <label class="layui-form-label">学号：</label>
+         <div class="layui-input-inline">
+            <input class="layui-input" name="Student_id" id="Student_id" autocomplete="off" placeholder="请输入学号">
+          </div>
+     <button class="layui-btn" data-type="reload" id="search">搜索</button>
+    </div>
+    <table id="student" lay-filter="student"></table>
+</div>
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use(['element','table'],function () {
+        var element = layui.element,
+            $ = layui.jquery,
+            table = layui.table;
+
+        var dt = table.render({
+            elem:"#student",
+            url:"/all_student_list/",
+            id : 'all_student_list',
+            page:true,
+            cols:[[
+                {field: 'id', title: 'id', align: 'center'},
+                {field: 'SName', title: '姓名', align: 'center'},
+                {field: 'Student_id', title: '学号', align: 'center'},
+                {field: 'SCollege', title: '学院', align: 'center'},
+                {field: 'SMajor', title: '专业', align: 'center'},
+                {field: 'Student_id', title: '学号', align: 'center'},
+                {field: 'SSex', title: '性别', align: 'center'},
+                {field: 'SPhoneNumber', title: '手机号码', align: 'center'},
+                {field: 'SIDCard', title: '身份证号', align: 'center'},
+                {title: '操作', align: 'center',toolbar:"#tools"}
+            ]]
+        });
+        
+        table.on('tool(student)',function(obj){
+            var data = obj.data;
+            var layEvent = obj.event;
+            var tr = obj.tr;
+            var currPage = dt.config.page.curr;
+            
+            if(layEvent ==="edit"){
+            	window.location.href="/edit_student_page/?id="+data.id;
+            }
+            if(layEvent === 'delete'){
+                layer.confirm('确认删除当前数据吗？',{icon:5,shade:0.1},function(index){
+                    $.post("/delete_student/",{Sid:data.id, csrfmiddlewaretoken: '{{ csrf_token  }}'},function(success){
+                    	if(success.code === 0){
+                    		obj.del();
+                    		dt.reload({
+                    			page:{curr:1}
+                    		});
+                    		layer.msg(success.msg);
+                    	}
+                    })
+                });
+            }
+        });
+
+        $('#search').on('click', function () {
+                let Student_id = $('#Student_id');
+
+                //执行重载
+                table.reload('all_student_list', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    , where: {
+                            Student_id: Student_id.val()
+                    }
+                }, 'data');
+        });
+    });
+</script>
+<script type="text/html" id="tools">
+    <a class="layui-btn layui-btn-sm" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-sm layui-btn-danger" lay-event="delete">删除</a>
+</script>
+</body>
+</html>
